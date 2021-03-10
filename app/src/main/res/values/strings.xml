@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">MovieBuzz</string>
+    <string name="series">SERIES</string>
+    <string name="movie">MOVIE</string>
+    <string name="category">Category</string>
+    <string name="other">OTHER</string>
+    <string name="hindi">HINDI</string>
+    <string name="english">English</string>
+    <string name="language">Language</string>
+    <string name="netflix">Netflix</string>
+    <string name="amazon_prime">AMAZON-PRIME</string>
+    <string name="platform">platform</string>
+    <string name="genre">Genre</string>
+    <string name="comedy">COMEDY</string>
+    <string name="thriller">THRILLER</string>
+    <string name="horror">HORROR</string>
+    <string name="action">ACTION</string>
+    <string name="adventure">ADVENTURE</string>
+    <string name="animation">ANIMATION</string>
 </resources>
