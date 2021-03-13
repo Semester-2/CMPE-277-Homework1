@@ -5,22 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.app.movie.R
+import com.app.movie.`interface`.GenreSelectListener
+import com.app.movie.model.MovieGenre
 
-class MovieGridAdapter(val genreList : ArrayList<kotlin.Int>,  val context:Context) : RecyclerView.Adapter<MovieGridAdapter.MovieHolder>() {
+class MovieGridAdapter(private val genreList : ArrayList<MovieGenre>, private val clickListener: GenreSelectListener, val context:Context) :
+    RecyclerView.Adapter<MovieGridAdapter.MovieHolder>(){
 
-    class MovieHolder(view: View): RecyclerView.ViewHolder(view),View.OnClickListener{
+    class MovieHolder(view: View): RecyclerView.ViewHolder(view){
         val imageView : ImageView = view.findViewById(R.id.list_image_view)
-
-        init{
-            imageView.setOnClickListener(this)
-        }
-
-        override fun onClick(view: View?) {
-
-        }
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): MovieHolder {
@@ -35,12 +29,10 @@ class MovieGridAdapter(val genreList : ArrayList<kotlin.Int>,  val context:Conte
     }
 
     override fun onBindViewHolder(holder: MovieHolder, position: Int) {
-//        holder.imageView.setImageDrawable(
-//            ContextCompat.getDrawable(
-//                context, // Context
-//                R.drawable.action // Drawable
-//            )
-//        )
-        holder.imageView.setImageResource(genreList[position])
+        holder.imageView.setImageResource(genreList[position].resId)
+        holder.imageView.setOnClickListener {
+            clickListener.handleGenreSelect(genreList[position])
+        }
     }
+
 }
