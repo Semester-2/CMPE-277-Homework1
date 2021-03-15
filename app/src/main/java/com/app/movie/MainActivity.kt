@@ -1,5 +1,6 @@
 package com.app.movie
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -9,6 +10,7 @@ import com.app.movie.adapter.MovieGridAdapter
 import com.app.movie.model.Genre
 import com.app.movie.model.MovieGenre
 import kotlinx.android.synthetic.main.dashboard.*
+val SELECTED_GENRE = "Selected_Genre"
 
 class MainActivity : AppCompatActivity() , GenreSelectListener{
 
@@ -38,5 +40,9 @@ class MainActivity : AppCompatActivity() , GenreSelectListener{
 
     override fun handleGenreSelect(data: MovieGenre) {
         Toast.makeText(this,"Click handled",Toast.LENGTH_LONG).show()
+        val intent = Intent(this, MovieListActivity::class.java)
+        intent.putExtra(SELECTED_GENRE,data.genre)
+        startActivity(intent)
     }
 }
+

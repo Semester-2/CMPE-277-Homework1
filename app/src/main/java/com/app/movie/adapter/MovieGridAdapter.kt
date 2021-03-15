@@ -19,7 +19,7 @@ class MovieGridAdapter(private val genreList : ArrayList<MovieGenre>, private va
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): MovieHolder {
         val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.movie_grid_list_item, viewGroup, false)
+            .inflate(R.layout.genre_list_item, viewGroup, false)
 
         return MovieHolder(view)
     }
@@ -34,5 +34,4 @@ class MovieGridAdapter(private val genreList : ArrayList<MovieGenre>, private va
             clickListener.handleGenreSelect(genreList[position])
         }
     }
-
 }

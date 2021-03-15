@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="20dp"
+    android:id="@+id/cardView">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/image"
+            android:paddingLeft="20dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:textColor="@color/colorPrimary"
+            android:text="The Town " />
+
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/image"
+            android:layout_below="@+id/name"
+            android:paddingLeft="20sp"
+            android:paddingTop="5sp"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rating"
+            android:layout_below="@+id/name"
+android:paddingTop="10sp"
+            android:text="6.6"
+            android:layout_toRightOf="@+id/star"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:textColor="@color/colorPrimary"/>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
