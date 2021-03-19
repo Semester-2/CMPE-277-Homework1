@@ -1,48 +1,23 @@
 package com.app.movie
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
-import com.app.movie.`interface`.GenreSelectListener
 import com.app.movie.adapter.MovieGridAdapter
-import com.app.movie.model.Genre
-import com.app.movie.model.MovieGenre
-import kotlinx.android.synthetic.main.dashboard.*
-val SELECTED_GENRE = "Selected_Genre"
+import com.app.movie.model.movieGenreList
+import kotlinx.android.synthetic.main.genre_grid_layout.*
 
-class MainActivity : AppCompatActivity() , GenreSelectListener{
+const val SELECTED_GENRE = "Selected_Genre"
 
-    private val genreList: ArrayList<MovieGenre> = ArrayList()
+class MainActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.dashboard)
-        addGenres()
-        genre_recycler_view.adapter = MovieGridAdapter(genreList, this, this)
+        setContentView(R.layout.genre_grid_layout)
+        genre_recycler_view.adapter = MovieGridAdapter(movieGenreList)
         val gridLayoutManager = GridLayoutManager(this,2)
         genre_recycler_view.layoutManager=gridLayoutManager
         genre_recycler_view.hasFixedSize()
-    }
-
-    private fun addGenres() {
-
-        genreList.add(MovieGenre(Genre.ACTION, R.drawable.action))
-        genreList.add(MovieGenre(Genre.COMEDY, R.drawable.comedy))
-        genreList.add(MovieGenre(Genre.CRIME, R.drawable.crime))
-        genreList.add(MovieGenre(Genre.DRAMA, R.drawable.drama))
-        genreList.add(MovieGenre(Genre.FANTASY, R.drawable.fantasy))
-        genreList.add(MovieGenre(Genre.SCIFI, R.drawable.scifi))
-        genreList.add(MovieGenre(Genre.SUPER_HERO, R.drawable.super_hero))
-    }
-
-
-    override fun handleGenreSelect(data: MovieGenre) {
-        Toast.makeText(this,"Click handled",Toast.LENGTH_LONG).show()
-        val intent = Intent(this, MovieListActivity::class.java)
-        intent.putExtra(SELECTED_GENRE,data.genre)
-        startActivity(intent)
     }
 }
 
