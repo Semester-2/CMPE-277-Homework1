@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -25,7 +25,7 @@
             android:label="@string/title_activity_movie_detail_scrolling"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".MovieDetailActivity" android:parentActivityName=".MovieListActivity"/>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

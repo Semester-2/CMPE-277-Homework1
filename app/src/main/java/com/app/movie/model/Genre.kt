@@ -4,8 +4,8 @@ enum class Genre {
 
     ACTION,
     COMEDY,
-    CRIME,
-    DRAMA,
+    HORROR,
+    ROMANCE,
     FANTASY,
     SCIFI,
     SUPER_HERO

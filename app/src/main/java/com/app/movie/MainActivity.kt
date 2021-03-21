@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.genre_grid_layout)
+
         genre_recycler_view.adapter = MovieGridAdapter(movieGenreList)
         val gridLayoutManager = GridLayoutManager(this,2)
         genre_recycler_view.layoutManager=gridLayoutManager

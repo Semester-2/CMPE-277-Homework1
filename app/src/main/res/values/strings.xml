@@ -108,4 +108,8 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="director">Director:</string>
+    <string name="starring">Starring:</string>
+    <string name="shared_pref">Shared Pref</string>
+    <string name="recommendation">Recommendations</string>
 </resources>
