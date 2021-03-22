@@ -9,6 +9,8 @@ import com.app.movie.model.Genre
 import com.app.movie.model.GenreViewModel
 import kotlinx.android.synthetic.main.movie_list.*
 
+const val GENRE = "Shared Pref genre"
+
 class MovieListActivity : AppCompatActivity(){
 
     private lateinit var viewModel: GenreViewModel
@@ -23,10 +25,14 @@ class MovieListActivity : AppCompatActivity(){
             viewModel.updateGenre(genre)
         }
 
+
+
         var  movieList = viewModel.selectedGenre?.let { viewModel.getMovieList(it) }
 
         movie_list_view.adapter = movieList?.let { DetailCardAdapter(it) }
         val linearLayoutManager = LinearLayoutManager(this)
         movie_list_view.layoutManager=linearLayoutManager
+
+
     }
 }

@@ -34,13 +34,15 @@ class MovieDetailScrollingActivity : AppCompatActivity() {
             desc.text = dataItem.desc
             directorName.text = dataItem.director
             starringName.text = dataItem.starring
-
+            if(dataItem.isEnabled)
+                fab.setImageResource(R.drawable.heart)
+            else fab.setImageResource(R.drawable.heart_border)
         }
 
         fab.setOnClickListener {
             if (dataItem != null) {
                 if(dataItem.isEnabled){
-                    fab.setImageResource(R.drawable.grey_heart)
+                    fab.setImageResource(R.drawable.heart_border)
                 }else{
                     fab.setImageResource(R.drawable.heart)
                 }

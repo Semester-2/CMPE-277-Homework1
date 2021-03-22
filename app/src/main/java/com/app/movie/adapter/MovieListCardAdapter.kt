@@ -35,7 +35,7 @@ class DetailCardAdapter (private val movieList : List<MovieDetail>) :
             if(oneItem.isEnabled){
                 heartImage.setImageResource(R.drawable.heart_red)
             }else{
-                heartImage.setImageResource(R.drawable.heart_black)
+                heartImage.setImageResource(R.drawable.heart_main)
             }
 
             val context = view.context

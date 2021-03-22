@@ -9,7 +9,7 @@ class GenreViewModel : ViewModel() {
     private var movieDetailList : ArrayList<MovieDetail>
 
     init {
-        selectedGenre = Genre.COMEDY
+        selectedGenre = Genre.ACTION
         movieDetailList = getList()[selectedGenre] as ArrayList<MovieDetail>
     }
 

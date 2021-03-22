@@ -25,15 +25,10 @@ class RecommendationGridAdapter (private val movieList : List<MovieDetail>) :
         private val heartImage : ImageView = view.findViewById(R.id.heartImage)
 
         fun bind(oneItem: MovieDetail) {
-            heartImage.visibility = View.GONE
+            heartImage.visibility = View.INVISIBLE
             name.text = oneItem.name
             rating.text = oneItem.rating
-            imageView.setImageResource(R.drawable.test_wide)
-            if(oneItem.isEnabled){
-                heartImage.setImageResource(R.drawable.heart_red)
-            }else{
-                heartImage.setImageResource(R.drawable.heart_black)
-            }
+            imageView.setImageResource(oneItem.image)
         }
     }
 
